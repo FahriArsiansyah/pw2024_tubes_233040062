@@ -2,7 +2,7 @@
 
 function koneksi()
 {
-    $db = mysqli_connect('localhost', 'root', '', 'pw2024_tubes_233040054')  or die('koneksi ke DB gagal');
+    $db = mysqli_connect('localhost', 'root', '', 'pw2024_tubes_233040062')  or die('koneksi ke DB gagal');
     return $db;
 }
 function query($sql)
