@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/stylehome.css" >
     <title>Apotek Nyagak</title>
+
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap');
 body {
@@ -66,10 +67,10 @@ nav {
               <a class="nav-link" href="./pages/singleproduct.php">Produk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./Radit-Cake/pages/register.php">Daftar</a>
+              <a class="nav-link" href="./pages/register.php">Daftar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./Radit-Cake/pages/index1.php">Masuk</a>
+              <a class="nav-link" href="./pages/index1.php">Masuk</a>
             </li>
           </ul>
         </div>
@@ -152,7 +153,7 @@ nav {
                         <img src="./image/ibuprofen.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h6 class="card-title">Ibuprofen</h6>
-                            <p class="card-text">Rp.1</p>
+                            <p class="card-text">Rp.2.600</p>
                             <a href="#" class="btn btn-dark d-grid">Beli</a>
                         </div>
                     </div>

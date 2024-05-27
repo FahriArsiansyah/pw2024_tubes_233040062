@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../css/register.css" />
     <link rel="stylesheet" type="text/css" href="../fontawesome/css/all.min.css" />
 
-    <title>RaditBerylCake</title>
+    <title>Apotek Nyagak</title>
   </head>
   <body>
 

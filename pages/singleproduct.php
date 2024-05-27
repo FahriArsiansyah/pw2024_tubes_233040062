@@ -11,20 +11,47 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/product.css">
 
-    <title>Radit Beryl Cake</title>
-    <link rel="stylesheet" href="../css/product.css">
-</head>
+    <title>Apotek Nyagak</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap');
+  body {
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #2d2d2d;
+  }
+  .form-control {
+    width: 350px;
+  }
+  .img-categori {
+    width: 100px;
+  }
+  .img-categori:hover {
+    transform: scale(1.2);
+    transition: 1s;
+  }
+  .row-container {
+    background-color: #fff;
+  }
+
+  .card-img-top:hover {
+    border: 3px solid #2d2d2d;
+    transform: scale(1.1);
+    transition: 1s;
+  }
+  nav {
+    background-color: #f0a7f5;
+  }
+      </style>
+    </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-pink">
         <div class="container-fluid">
             <div class="service-icon">
-                <svg width="30" height="24" viemBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                    <path
-                      d="M4 9v-1.974h2v1.974h5v-4h2v4h5v-2h2v2h.755c1.803.091 3.243 1.646 3.243 3.519 0 .961-.382 1.829-.998 2.458v9.023h-22v-9.02c-.43-.438-.747-.993-.9-1.621-.067-.276-.1-.558-.1-.841 0-2.009 1.629-3.479 3.242-3.518h.758zm17 11h-18v2h18v-2zm-18-4.027v2.027h18v-2.027l-.407.025c-.775 0-1.541-.27-2.154-.79-.576.488-1.333.789-2.155.789-.812 0-1.566-.295-2.142-.779-.581.487-1.341.78-2.136.78-.807 0-1.575-.292-2.149-.78-.586.491-1.346.78-2.137.78-.775 0-1.526-.26-2.16-.79-.561.479-1.328.79-2.154.79l-.406-.025zm.29-4.973c-.627.049-1.243.635-1.288 1.421-.051.887.632 1.585 1.454 1.576 1.176-.014 1.915-.86 2.117-1.997.217.88.986 1.975 2.145 1.996 1.156.021 1.99-.959 2.161-1.958l.008-.038c.199 1.04.99 1.996 2.109 1.996 1.155 0 1.917-.872 2.172-1.996.248 1.138 1.035 1.994 2.117 1.997 1.108.003 1.955-.928 2.203-1.997.188.828.804 1.985 2.051 1.998.759.008 1.46-.65 1.46-1.483 0-.837-.649-1.481-1.318-1.517l-17.391.002zm.863-4.451c-1.897-.621-1.351-3.444.89-4.523.08 1.422 1.957 1.566 1.957 3.002 0 .602-.441 1.274-1.084 1.521.154-.509-.186-1.416-.88-1.809-.702.407-1.063 1.302-.883 1.809zm13.999-.026c-1.896-.621-1.35-3.444.891-4.523.08 1.422 1.957 1.566 1.957 3.002 0 .602-.441 1.274-1.084 1.521.153-.509-.186-1.416-.88-1.809-.702.407-1.063 1.302-.884 1.809zm-6.999-2c-1.897-.621-1.351-3.444.89-4.523.08 1.422 1.957 1.566 1.957 3.002 0 .602-.441 1.274-1.084 1.521.153-.509-.186-1.416-.88-1.809-.702.407-1.063 1.302-.883 1.809z"
-                    />
-                  </svg>
-                    <span class="text-white"> RaditBeryl<strong >Cake</strong></span>
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M10.999 4.442v-.71c-.598-.346-1-.992-1-1.732 0-1.104.896-2 2-2s2 .896 2 2c0 .74-.402 1.386-1 1.732v.71c.144-.023.268-.053.36-.089 1.206-.459 1.872-2.286 3.948-2.353 2.21-.029 3.418 2.251 5.173 2.769.473.139 1.027.142 1.52.172-.635 4.108-6.593 5.872-11.001 4.725v6.923c.843.262 1.911.611 2.542 1.201 2.008 1.877.83 4.698-1.539 4.787v-1c1.266-.627 1.504-1.961-1.003-2.878v4.301c0 .553-.448 1-1 1s-1-.447-1-1v-4.896c-1.955-.51-5.364-1.17-5.339-4.003.018-1.696 1.55-3.101 3.331-3.101h.01c.553 0 1 .448 1 1 0 .549-.442.994-.989 1-.836.009-1.392.651-1.349 1.192.098 1.124 2.22 1.556 3.336 1.844v-6.369c-4.407 1.146-10.364-.619-10.999-4.726.493-.03 1.047-.033 1.52-.172 1.755-.518 2.963-2.798 5.173-2.769 2.076.067 2.742 1.894 3.948 2.353.092.036.215.065.358.089zm-3.039 13.923c.863.25 1.655.463 2.35.624-1.691.869-1.495 2.002-.311 2.588v1c-2.138-.08-3.305-2.384-2.039-4.212zm6.073-2.606c.889-.257 2.232-.644 2.305-1.567.043-.543-.516-1.183-1.35-1.192-.547-.006-.989-.451-.989-1 0-.552.448-1 1-1h.011c1.772 0 3.313 1.399 3.33 3.101.017 1.273-.851 2.367-1.986 2.934-.6-.505-1.397-.909-2.321-1.276zm5.773-8.647c.512-.24.961-.534 1.308-.886-1.406-.386-2.573-2.218-3.767-2.227-1.241.04-2.034 2.353-4.347 2.461v1.193c.605.22 1.527.336 2.551.323-.124-.484-.177-1.003-.186-1.605.413.611.955 1.129 1.523 1.516.478-.057.958-.142 1.422-.257-.394-.587-.6-1.203-.729-1.879.645.66 1.413 1.068 2.225 1.361zm-8.807-.652c-2.312-.108-3.106-2.421-4.346-2.461-1.194.009-2.361 1.841-3.767 2.227.347.352.796.646 1.308.886.812-.293 1.58-.701 2.225-1.361-.129.676-.335 1.292-.729 1.879.464.115.944.2 1.422.257.568-.387 1.11-.905 1.523-1.516-.009.602-.062 1.121-.186 1.605 1.023.013 1.945-.103 2.55-.322v-1.194z"/></svg>
+            </svg>
+                    <span class="text-white"> Apotek<strong >Nyagak</strong></span>
                 </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,10 +65,7 @@
                     <a class="nav-link" href="">Produk</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="keranjang.html">Keranjang</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register.html">Daftar</a>
+                    <a class="nav-link" href="register.php">Daftar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index1.php">Masuk</a>
@@ -69,25 +93,25 @@
         <div class="row row-product">
             <div class="col-lg-5">
                 <figure class="figure">
-                    <img src="../assets/produk/kueultah1.jpg" class="figure-img img-fluid" width="300px" height="5000px">
+                    <img src="../image/ultraflu.jpg" class="figure-img img-fluid" width="300px" height="5000px">
                     <figcaption class="figure-caption d-flex justify-content-evenly">
                         <a href="#">
-                            <img src="../assets/produk/kueultah1.jpg" class="figure-img img-fluid" width="60px" height="70px">
+                            <img src="../image/ultraflu.jpg" class="figure-img img-fluid" width="60px" height="70px">
                         </a>
                         <a href="#">
-                            <img src="../assets/produk/kueultah1.jpg" class="figure-img img-fluid" width="60px" height="70px">
+                            <img src="../image/ultraflu.jpg" class="figure-img img-fluid" width="60px" height="70px">
                         </a>
                         <a href="#">
-                            <img src="../assets/produk/kueultah1.jpg" class="figure-img img-fluid" width="60px" height="70px">
+                            <img src="../image/ultraflu.jpg" class="figure-img img-fluid" width="60px" height="70px">
                         </a>
                     </figcaption>
                 </figure>
             </div>
 
             <di class="col-lg-7">
-                <h4>KUE ULANG TAHUN</h4>
+                <h4>ULTRAFLU</h4>
                 <div class="garis-product"></div>
-                <h3 class="text-muted mb-2">Rp. 150.000</h3>
+                <h3 class="text-muted mb-2">Rp. 4.000</h3>
 
                 <button class="button btn-dark btn-sm">-<i class="fas fa-minus"></i></button>
                 <span class="mx-2">1</span>
@@ -116,28 +140,28 @@
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="Deskripsi-tab" data-bs-toggle="tab"
                             data-bs-target="#Deskripsi" type="button" role="tab" aria-controls="Deskripsi"
-                            aria-selected="true">Deskripsi Makanan</button>
+                            aria-selected="true">Deskripsi Obat</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="Review-tab" data-bs-toggle="tab" data-bs-target="#Review"
                             type="button" role="tab" aria-controls="Review" aria-selected="false">Review
-                            Makanan</button>
+                            Khasiat Obat</button>
                     </li>
                 </ul>
                 <div class="tab-content p-3" id="myTabContent">
                     <div class="tab-pane fade show active Deskripsi" id="Deskripsi" role="tabpanel"
                         aria-labelledby="Deskripsi-tab">
                         <p>
-                           RaditBerylCake Menjual kue ulang tahun dengan bermacam ukuran dengan harga yang berbeda juga tentunya sesuai dengan ukuran kue nya. <br>
-                           Kue dengan ukuran 16 cm Harganya: Rp.100.000 <br>
-                           Kue dengan ukuran 18 cm Harganya: Rp.120.000 <br>
-                           Kue dengan ukuran 20 cm Harganya: Rp.150.000 <br>
+                            Ultraflu adalah obat yang bermanfaat <br>
+                            untuk meringankan gejala batuk pilek atau flu,<br>
+                            seperti demam, sakit kepala, hidung tersumbat,<br>
+                            bersin-bersin, serta batuk. <br>
                         </p>
                     </div>
                     <div class="tab-pane fade review" id="Review" role="tabpanel" aria-labelledby="Review-tab">
                         <div class="row">
                             <div class="col-1">
-                                <img src="../assets/rivew/emmir.jpg" class="review-img rounded-circle" width="50" height="50">
+                                <img src="../rivew/emmir.jpg" class="review-img rounded-circle" width="50" height="50">
                             </div>
                             <div class="col">
                                 <h5 class="review-name">Emmir</h5>
@@ -185,7 +209,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <span>copyright @2023 | Created and Develope by <a
+                    <span>copyright @2024 | Created and Develope by <a
                             href="https://www.instagram.com/f.arsiansyah/?hl=en"
                             class="text-decoration-none text-dark fw-bold">F'ARSIANSYAH</a>
                         </span>
