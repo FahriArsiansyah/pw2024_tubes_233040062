@@ -81,7 +81,7 @@
     <div class="container">
         <nav aria-label="breadcrumb" style="background-color: #fff" class="mt-3">
             <ol class="breadcrumb p-3">
-                <li class="breadcrumb-item"><a href="homepage.html" class="text-decoration-none">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="homepage.php" class="text-decoration-none">Beranda</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Produk</li>
             </ol>
         </nav>
@@ -142,11 +142,6 @@
                             data-bs-target="#Deskripsi" type="button" role="tab" aria-controls="Deskripsi"
                             aria-selected="true">Deskripsi Obat</button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="Review-tab" data-bs-toggle="tab" data-bs-target="#Review"
-                            type="button" role="tab" aria-controls="Review" aria-selected="false">Review
-                            Khasiat Obat</button>
-                    </li>
                 </ul>
                 <div class="tab-content p-3" id="myTabContent">
                     <div class="tab-pane fade show active Deskripsi" id="Deskripsi" role="tabpanel"
@@ -158,52 +153,7 @@
                             bersin-bersin, serta batuk. <br>
                         </p>
                     </div>
-                    <div class="tab-pane fade review" id="Review" role="tabpanel" aria-labelledby="Review-tab">
-                        <div class="row">
-                            <div class="col-1">
-                                <img src="../rivew/emmir.jpg" class="review-img rounded-circle" width="50" height="50">
-                            </div>
-                            <div class="col">
-                                <h5 class="review-name">Emmir</h5>
-                                <p class="review-des">Sangat rekomended, Rasa kue nya enak.</p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-1">
-                                <img src="../assets/rivew/jo.jpg" class="review-img rounded-circle" width="50" height="50">
-                            </div>
-                            <div class="col">
-                                <h5 class="review-name">Jojey</h5>
-                                <p class="review-des">Cocok dipesan saat ada teman yang sedang berulang tahun</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-1">
-                                <img src="../assets/rivew/ara.jpg" class="review-img rounded-circle" width="50" height="50">
-                            </div>
-                            <div class="col">
-                                <h5 class="review-name">Ara</h5>
-                                <p class="review-des">Bisa Request gambar kue nya, rekomended pokok nya!</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-1">
-                                <img src="../assets/rivew/cinta.jpg" class="review-img rounded-circle" width="50" height="50">
-                            </div>
-                            <div class="col">
-                                <h5 class="review-name">Cinta</h5>
-                                <p class="review-des">Bisa Request ukuran kue nya dan harganya sesuai, the best pokonya!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- review -->
-    
-
+                
     <!-- Footer -->
     <footer class="bg-light p-5 mt-5">
         <div class="container">

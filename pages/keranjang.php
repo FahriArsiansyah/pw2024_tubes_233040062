@@ -158,7 +158,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <span>copyright @2023 | Created and Develope by <a href="https://www.instagram.com/f.arsiansyah/?hl=en" class="text-decoration-none text-dark fw-bold">F'ARSIANSYAH</a> </span>
+            <span>copyright @2024 | Created and Develope by <a href="https://www.instagram.com/f.arsiansyah/?hl=en" class="text-decoration-none text-dark fw-bold">F'ARSIANSYAH</a> </span>
           </div>
         </div>
       </div>

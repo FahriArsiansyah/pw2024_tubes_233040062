@@ -1,3 +1,15 @@
+<?php
+include './function/functions.php';
+$apotek = query("SELECT * FROM apotek");
+
+
+// ketika tombol cari di tekan
+if (isset($_POST['cari'])) {
+  $apotek = cari($_POST['keyword']);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,15 +65,15 @@ nav {
         <span class="text-white">Apotek <strong>Nyagak</strong></span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> 
         <div class="collapse navbar-collapse" id="navbarNav">
-          <form class="d-flex ms-auto">
-            <input class="form-control me-2" type="search" placeholder="Cari Barang Anda!" aria-label="Cari" />
-            <button class="btn btn-light" type="submit">Cari</button>
+          <form action="" method="POST" class="d-flex ms-auto">
+            <input class="form-control me-2" type="text" name="keyword" placeholder="Cari Obat Anda!" aria-label="Cari" autocomplete="off" autofocus/>
+            <button class="btn btn-light" type="submit" autocomplete="off" name="cari">Cari!</button>
           </form>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./Radit-Cake/pages/homepage.html">Beranda</a>
+              <a class="nav-link active" aria-current="page" href="./pages/homepage.php">Beranda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./pages/singleproduct.php">Produk</a>
@@ -91,77 +103,42 @@ nav {
     <!-- Carousel End -->
 
 
-    <!-- Produk -->
-    <div class="container mt-5">
-        <div class="judul-Produk" style="background-color: #f0a7f5; padding: 5px 10px;">
-            <h5 class="text-center" style="margin-top: 5px;">PRODUK</h5>
+    <!-- Kategori -->
+    <div class="container mt-5" id="kategori">
+    <a href="admin/tambah.php" class="btn btn-primary mb-5">Tambah data Obat</a>
+    <div class="row">
+      
+      <?php if(empty($apotek)) : ?>
+        <div class="card border-danger mb-3" style="max-widt 24rem;" >
+          <div class="card-body text-danger">
+            <h5 class="card-title">Data tidak ditemukan!</h5>
+          </div>
         </div>
-            <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-4 col-6 mt-2">
-                    <div class="Card text-center">
-                        <img src="./image/Amoxicillin.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title">Amoxicillin</h6>
-                            <p class="card-text">Rp.40.500</p>
-                            <a href="#" class="btn btn-dark d-grid">Beli</a>
-                        </div>
-                    </div>
-                </div>
+        <?php endif ?>
 
-                <div class="col-lg-2 col-md-2 col-sm-4 col-6 mt-2">
-                    <div class="Card text-center">
-                        <img src="./image/bodrex.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title">Bodrex</h6>
-                            <p class="card-text">Rp.11.000</p>
-                            <a href="#" class="btn btn-dark d-grid">Beli</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-4 col-6 mt-2">
-                    <div class="Card text-center">
-                        <img src="./image/ultraflu.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title">Ultraflu</h6>
-                            <p class="card-text">Rp.4.000</p>
-                            <a href="#" class="btn btn-dark d-grid">Beli</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-4 col-6 mt-2">
-                    <div class="Card text-center">
-                        <img src="./image/sanmol.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title">Sanmol Paracetamol</h6>
-                            <p class="card-text">Rp.2.500</p>
-                            <a href="#" class="btn btn-dark d-grid">Beli</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-4 col-6 mt-2">
-                    <div class="Card text-center">
-                        <img src="./image/panadol.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title">Panadol</h6>
-                            <p class="card-text">Rp.14.000</p>
-                            <a href="#" class="btn btn-dark d-grid">Beli</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-4 col-6 mt-2">
-                    <div class="Card text-center">
-                        <img src="./image/ibuprofen.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title">Ibuprofen</h6>
-                            <p class="card-text">Rp.2.600</p>
-                            <a href="#" class="btn btn-dark d-grid">Beli</a>
-                        </div>
+        <?php 
+        $i = 1;
+        foreach ($apotek as $apt) : ?>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="image/<?= $apt['foto']; ?>" class="card-img-top" alt="..."  style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $apt['nama']; ?></h5>
+                        <p><?= $apt['dosis']; ?></p>
+                        <p><?= $apt['bentuk_sediaan']; ?></p>
+                        <p><?= $apt['produsen']; ?></p>
+                        <p><?= $apt['tanggal_kadaluwarsa']; ?></p>
+                        <p><?= $apt['harga']; ?></p>
+                        <a href="admin/ubah.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Ubah</a>
+                        <a href="admin/hapus.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Hapus</a>
                     </div>
                 </div>
             </div>
+        <?php endforeach; ?>
+    </div>
+</div>
 
-        </div>
-        <!-- Produk End -->
+    <!-- Kategori End -->
 
         <!-- Footer -->
         <footer class="bg-light p-5 mt-5">
