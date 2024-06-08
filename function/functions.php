@@ -23,6 +23,8 @@ function query($sql)
     return $rows;
 }
 
+// Tambah
+
 function tambah($data)
 {
     $conn = koneksi();
@@ -44,6 +46,8 @@ function tambah($data)
     return mysqli_affected_rows($conn);
 }
 
+// Hapus
+
 function hapus($id)
 {
     $conn = koneksi();
@@ -51,6 +55,8 @@ function hapus($id)
 
     return mysqli_affected_rows($conn);
 }
+
+// Ubah
 
 function ubah($data)
 {
@@ -82,6 +88,8 @@ function ubah($data)
         return mysqli_affected_rows($conn);
 }
 
+// Search
+
 function cari($keyword) {
     $conn = koneksi();
 
@@ -98,4 +106,102 @@ function cari($keyword) {
     }
 
     return $rows;
+}
+
+// Fungsi login
+function login($data)
+{
+  $conn = koneksi();
+
+  $username = htmlspecialchars($data["username"]);
+  $password = htmlspecialchars($data["password"]);
+
+  // cek dulu username nya
+  if ($user = query("SELECT * FROM user WHERE username = '$username'")[0]) {
+    if (password_verify($password, $user['password'])) {
+
+      $_SESSION['login'] = true;
+      $_SESSION['role'] = $user['role'];
+      $_SESSION['id'] = $user['user'];
+
+      // cek kondisi admin atau user
+      if ($user['role'] == 'admin') {
+        header('Location: ../admin/index.php');
+      } else {
+        header('Location: ../user/index.php');
+      }
+      exit;
+    }
+  }
+  return [
+    'error' => true,
+    'pesan' => 'Username / Password Salah!'
+  ];
+}
+
+// Fungsi register
+function register($data)
+{
+  $conn = koneksi();
+
+  $username = htmlspecialchars(strtolower($data['username']));
+  $password1 = mysqli_real_escape_string($conn, $data['password1']);
+  $password2 = mysqli_real_escape_string($conn, $data['password2']);
+
+  // jika username /  password kosong
+  if (empty($username) || empty($password1) || empty($password2)) {
+    echo "<script>
+            alert('Username / Password Tidak Boleh Kosong!');
+            document.location.href = '../login/register.php';
+          </script>";
+
+    return false;
+  }
+
+  // jika username sudah ada 
+  if (query("SELECT * FROM user WHERE username = '$username'  ")) {
+    echo "<script>
+            alert('Username Sudah Terdaftar!');
+            document.location.href = '../login/register.php';
+          </script>";
+
+    return false;
+  }
+
+  // jika konfirmasi password tidak sesuai
+  if ($password1 !== $password2) {
+    echo "<script>
+            alert('Konfirmasi Tidak Sesuai!');
+            document.location.href = './login/register.php';
+          </script>";
+
+    return false;
+  }
+
+  // jika password < 5 digit
+  if (strlen($password1) < 5) {
+    echo "<script>
+            alert('Password Terlalu Pendek!');
+            document.location.href = '../login/register.php';
+          </script>";
+
+    return false;
+  }
+
+  // Get role from user
+  $role = 'user';
+
+  // jika username & password sudah sesuai 
+  // enkripsi password
+  $password_baru = password_hash($password1, PASSWORD_DEFAULT);
+  // insert ke tabel users
+
+  // jika username & password sudah sesuai
+  $password_baru = password_hash($password1, PASSWORD_DEFAULT);
+  // insert ke tabel user
+  $query = "INSERT INTO user (username, password, role)
+                  VALUES
+            ('$username', '$password_baru', '$role')";
+  mysqli_query($conn, $query) or die(mysqli_error($conn));
+  return mysqli_affected_rows($conn);
 }

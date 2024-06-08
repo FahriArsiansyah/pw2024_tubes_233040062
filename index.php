@@ -68,18 +68,18 @@ nav {
         </button> 
         <div class="collapse navbar-collapse" id="navbarNav">
           <form action="" method="POST" class="d-flex ms-auto">
-            <input class="form-control me-2" type="text" name="keyword" placeholder="Cari Obat Anda!" aria-label="Cari" autocomplete="off" autofocus/>
-            <button class="btn btn-light" type="submit" autocomplete="off" name="cari">Cari!</button>
+            <input class="form-control me-2 keyword" type="text" name="keyword" placeholder="Cari Obat Anda!" aria-label="Cari" autocomplete="off" autofocus/>
+            <button class="btn btn-light tombol_cari" type="submit" autocomplete="off" name="cari">Cari!</button>
           </form>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./pages/homepage.php">Beranda</a>
+              <a class="nav-link active" aria-current="page" href="">Beranda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./pages/singleproduct.php">Produk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./pages/register.php">Daftar</a>
+              <a class="nav-link" href="login/login.php">Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./pages/index1.php">Masuk</a>
@@ -107,36 +107,38 @@ nav {
     <div class="container mt-5" id="kategori">
     <a href="admin/tambah.php" class="btn btn-primary mb-5">Tambah data Obat</a>
     <div class="row">
-      
-      <?php if(empty($apotek)) : ?>
-        <div class="card border-danger mb-3" style="max-widt 24rem;" >
-          <div class="card-body text-danger">
-            <h5 class="card-title">Data tidak ditemukan!</h5>
-          </div>
-        </div>
-        <?php endif ?>
-
-        <?php 
-        $i = 1;
-        foreach ($apotek as $apt) : ?>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="image/<?= $apt['foto']; ?>" class="card-img-top" alt="..."  style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $apt['nama']; ?></h5>
-                        <p><?= $apt['dosis']; ?></p>
-                        <p><?= $apt['bentuk_sediaan']; ?></p>
-                        <p><?= $apt['produsen']; ?></p>
-                        <p><?= $apt['tanggal_kadaluwarsa']; ?></p>
-                        <p><?= $apt['harga']; ?></p>
-                        <a href="admin/ubah.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Ubah</a>
-                        <a href="admin/hapus.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Hapus</a>
+        <div class="contonor">
+            <?php if(empty($apotek)) : ?>
+                <div class="card border-danger mb-3" style="max-width: 24rem;">
+                    <div class="card-body text-danger">
+                        <h5 class="card-title">Data tidak ditemukan!</h5>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endif ?>
+
+            <?php 
+            $i = 1;
+            foreach ($apotek as $apt) : ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="image/<?= $apt['foto']; ?>" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $apt['nama']; ?></h5>
+                            <p><?= $apt['dosis']; ?></p>
+                            <p><?= $apt['bentuk_sediaan']; ?></p>
+                            <p><?= $apt['produsen']; ?></p>
+                            <p><?= $apt['tanggal_kadaluwarsa']; ?></p>
+                            <p><?= $apt['harga']; ?></p>
+                            <a href="admin/ubah.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Ubah</a>
+                            <a href="admin/hapus.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Hapus</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 </div>
+
 
     <!-- Kategori End -->
 
@@ -153,6 +155,8 @@ nav {
                 </div>
             </div>
         </footer>
+
+    <script src="./script.js"></script>  
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
