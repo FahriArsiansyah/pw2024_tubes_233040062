@@ -8,7 +8,7 @@ if (isset($_POST['tambah'])) {
   if (tambah($_POST) > 0) {
     echo "<script>
             alert('data berhasil diitambahkan!');
-            document.location.href = '../index.php';
+            document.location.href = 'index.php';
           </script>";
   }
 }
@@ -31,7 +31,7 @@ if (isset($_POST['tambah'])) {
   <div class="container col-8">
     <h1>Tambah Data Obat</h1>
 
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="nama" class="form-label">Nama</label>
         <input type="text" class="form-control" id="nama" name="nama" required>
@@ -66,7 +66,7 @@ if (isset($_POST['tambah'])) {
 
       <div class="mb-3">
         <label for="foto" class="form-label">Foto</label>
-        <input type="file" class="form-control" id="harga" name="foto" required>
+        <input type="file" class="form-control" id="foto" name="foto">
       </div>
 
       <button type="submit" name="tambah" class="btn btn-primary">Tambah</button>

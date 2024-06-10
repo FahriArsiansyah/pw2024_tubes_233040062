@@ -10,7 +10,7 @@ if (isset($_POST['ubah'])) {
     if (ubah($_POST) > 0) {
         echo "<script>
     alert('data berhasil diubah');
-    document.location.href = '../index.php';
+    document.location.href = 'index.php';
     </script>";
     } else {
         echo "data gagal ditambahkan!";
@@ -33,7 +33,7 @@ if (isset($_POST['ubah'])) {
     <div class="container">
         <h1>Ubah Data Obat</h1>
 
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $apt['id']; ?>">
             <div class="mb-3">
                 <label for="nama" class="form-label">nama</label>
@@ -64,7 +64,9 @@ if (isset($_POST['ubah'])) {
             </div>
             <div class="mb-3">
                 <label for="foto" class="form-label">foto</label>
-                <input type="text" class="form-control" id="foto" name="foto" required value="<?= $apt['foto']; ?>">
+                <input type="file" class="form-control" id="foto" name="foto" class="foto" required value="<?= $apt['foto']; ?>">
+                <img src="./image/<?= $apt['foto']; ?>" width="120px" >
+
             </div>
             <button type="submit" name="ubah" class="btn btn-primary">ubah</button>
         </form>

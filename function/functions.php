@@ -35,7 +35,13 @@ function tambah($data)
     $produsen = htmlspecialchars($data['produsen']);
     $tanggal_kadaluwarsa = htmlspecialchars($data['tanggal_kadaluwarsa']);
     $harga = htmlspecialchars($data['harga']);
-    $foto = htmlspecialchars($data['foto']);
+    
+
+     // upload gambar
+     $foto = upload();
+     if (!$foto) {
+         return false;
+     }
 
     $sql = "INSERT INTO apotek
             VALUES (null, '$nama', '$dosis', '$bentuk_sediaan', '$produsen', '$tanggal_kadaluwarsa', '$harga', '$foto')
@@ -45,6 +51,52 @@ function tambah($data)
 
     return mysqli_affected_rows($conn);
 }
+
+// Upload
+function upload()
+{
+    $namaFile = $_FILES['foto']['name'];
+    $ukuranFile = $_FILES['foto']['size'];
+    $error = $_FILES['foto']['error'];
+    $tmpName = $_FILES['foto']['tmp_name'];
+
+    // cek apakah tidak ada gambar di upload
+    if ($error === 4) {
+        echo "<script>
+                alert('pilih gambar terlebih dahulu!');
+                </script>";
+        return false;
+    }
+
+    // cek apakah yang diupload adalah gambar
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>
+                alert('yang anda upload bukan gambar!');
+                </script>";
+        return false;
+    }
+
+    // ukuran terlalu besar
+    if ($ukuranFile > 50000000) {
+        echo "<script>
+                alert('ukuran gambar terlalu besar!');
+                </script>";
+        return false;
+    }
+
+    // lolos pengecekan, gambar siap diupload
+    // generate nama gambar baru
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpName, '../image/' . $namaFileBaru);
+    return $namaFileBaru;
+}
+
 
 // Hapus
 
@@ -70,7 +122,14 @@ function ubah($data)
         $produsen = htmlspecialchars($data['produsen']);
         $tanggal_kadaluwarsa = htmlspecialchars($data['tanggal_kadaluwarsa']);
         $harga = htmlspecialchars($data['harga']);
-        $foto = htmlspecialchars($data['foto']);
+        $gambarLama = htmlspecialchars($data['gambarLama']);
+
+         // cek apakah user pilih gambar baru atau tidak
+    if ($_FILES['foto']['error'] === 4) {
+      $foto = $gambarLama;
+  } else {
+      $foto = upload();
+  }
 
         $query = "UPDATE apotek SET
                     nama = '$nama',

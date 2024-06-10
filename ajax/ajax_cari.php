@@ -26,8 +26,6 @@ $apotek = cari($_GET['keyword']);
                             <p><?= $apt['produsen']; ?></p>
                             <p><?= $apt['tanggal_kadaluwarsa']; ?></p>
                             <p><?= $apt['harga']; ?></p>
-                            <a href="admin/ubah.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Ubah</a>
-                            <a href="admin/hapus.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Hapus</a>
                         </div>
                     </div>
                 </div>
