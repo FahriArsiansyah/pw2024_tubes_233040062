@@ -29,7 +29,7 @@ if (isset($_POST['login'])) {
 
   <style>
     body {
-      background-image: url(assets/image/Background.jpg);
+      background-image: url(../image/background/back_h.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -44,6 +44,7 @@ if (isset($_POST['login'])) {
     }
 
     .login-form {
+      background-color: #f0a7f5;
       width: 100%;
       max-width: 400px;
       padding: 15px;
@@ -55,7 +56,7 @@ if (isset($_POST['login'])) {
 
 <body>
   <div class="container-fluid login-container">
-    <div class="login-form bg-secondary text-white">
+    <div class="login-form  text-white">
       <h2 class="text-center mb-4">Login</h2>
       <?php if (isset($login['error'])) : ?>
         <p style="color: red;"><?= $login['pesan']; ?></p>

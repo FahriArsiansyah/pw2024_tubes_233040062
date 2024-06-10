@@ -34,6 +34,7 @@ if (isset($_POST['register'])) {
     }
 
     .register-form {
+      background-color: #f0a7f5;
       width: 100%;
       max-width: 400px;
       padding: 15px;

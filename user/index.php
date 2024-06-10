@@ -2,9 +2,12 @@
 include '../function/functions.php';
 $apotek = query("SELECT * FROM apotek");
 
+
+// ketika tombol cari di tekan
+if (isset($_POST['cari'])) {
+  $apotek = cari($_POST['keyword']);
+}
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -62,27 +65,24 @@ nav {
         <span class="text-white">Apotek <strong>Nyagak</strong></span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> 
         <div class="collapse navbar-collapse" id="navbarNav">
-          <form class="d-flex ms-auto">
-            <input class="form-control me-2" type="search" placeholder="Cari Barang Anda!" aria-label="Cari" />
-            <button class="btn btn-light" type="submit">Cari</button>
+          <form action="" method="POST" class="d-flex ms-auto">
+            <input class="form-control me-2 keyword" type="text" name="keyword" placeholder="Cari Obat Anda!" aria-label="Cari" autocomplete="off" autofocus/>
+            <button class="btn btn-light tombol_cari" type="submit" autocomplete="off" name="cari">Cari!</button>
           </form>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../pages/homepage.php">Beranda</a>
+              <a class="nav-link active" aria-current="page" href="">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../pages/singleproduct.php">Produk</a>
+              <a class="nav-link" href="login/login.php">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../pages/register.php">Daftar</a>
+              <a class="nav-link" href="">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../pages/index1.php">Masuk</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../login/logout.php">logout</a>
+              <a class="nav-link" href="../login/logout.php">Logout</a>
             </li>
           </ul>
         </div>
@@ -105,30 +105,44 @@ nav {
 
     <!-- Kategori -->
     <div class="container mt-5" id="kategori">
-    <a href="../admin/tambah.php" class="btn btn-primary mb-5">Tambah data Obat</a>
-    <div class="row">
-        <?php 
-        $i = 1;
-        foreach ($apotek as $apt) : ?>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="../image/<?= $apt['foto']; ?>" class="card-img-top" alt="..."  style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $apt['nama']; ?></h5>
-                        <p><?= $apt['dosis']; ?></p>
-                        <p><?= $apt['bentuk_sediaan']; ?></p>
-                        <p><?= $apt['produsen']; ?></p>
-                        <p><?= $apt['tanggal_kadaluwarsa']; ?></p>
-                        <p><?= $apt['harga']; ?></p>
-                        
+    
+  
+        <div class="contonor">
+            <?php if(empty($apotek)) : ?>
+                <div class="card border-danger mb-3" style="max-width: 24rem;">
+                    <div class="card-body text-danger">
+                        <h5 class="card-title">Data tidak ditemukan!</h5>
                     </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endif ?>
+            <div class="row">
+            <?php 
+            $i = 1;
+            foreach ($apotek as $apt) : ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="../image/<?= $apt['foto']; ?>" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $apt['nama']; ?></h5>
+                            <p><?= $apt['dosis']; ?></p>
+                            <p><?= $apt['bentuk_sediaan']; ?></p>
+                            <p><?= $apt['produsen']; ?></p>
+                            <p><?= $apt['tanggal_kadaluwarsa']; ?></p>
+                            <p><?= $apt['harga']; ?></p>
+
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 </div>
 
+
+
     <!-- Kategori End -->
+
+    <a class="btn btn-primary" href="https://maps.app.goo.gl/xqANmnHc8WeDm9SV7?g_st=iw" role="button">Our Location</a>
 
         <!-- Footer -->
         <footer class="bg-light p-5 mt-5">
@@ -143,6 +157,8 @@ nav {
                 </div>
             </div>
         </footer>
+
+    <script src="s.js"></script>  
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 

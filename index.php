@@ -76,13 +76,13 @@ nav {
               <a class="nav-link active" aria-current="page" href="">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./pages/singleproduct.php">Produk</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="login/login.php">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./pages/index1.php">Masuk</a>
+              <a class="nav-link" href="./login/register.php">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login/logout.php">Logout</a>
             </li>
           </ul>
         </div>
@@ -102,11 +102,9 @@ nav {
 
     <!-- Carousel End -->
 
-
     <!-- Kategori -->
     <div class="container mt-5" id="kategori">
-    <a href="admin/tambah.php" class="btn btn-primary mb-5">Tambah data Obat</a>
-    <div class="row">
+  
         <div class="contonor">
             <?php if(empty($apotek)) : ?>
                 <div class="card border-danger mb-3" style="max-width: 24rem;">
@@ -115,7 +113,7 @@ nav {
                     </div>
                 </div>
             <?php endif ?>
-
+            <div class="row">
             <?php 
             $i = 1;
             foreach ($apotek as $apt) : ?>
@@ -129,8 +127,7 @@ nav {
                             <p><?= $apt['produsen']; ?></p>
                             <p><?= $apt['tanggal_kadaluwarsa']; ?></p>
                             <p><?= $apt['harga']; ?></p>
-                            <a href="admin/ubah.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Ubah</a>
-                            <a href="admin/hapus.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Hapus</a>
+                    
                         </div>
                     </div>
                 </div>
@@ -139,8 +136,9 @@ nav {
     </div>
 </div>
 
-
     <!-- Kategori End -->
+
+    <a class="btn btn-primary" href="https://maps.app.goo.gl/xqANmnHc8WeDm9SV7?g_st=iw" role="button">Our Location</a>
 
         <!-- Footer -->
         <footer class="bg-light p-5 mt-5">

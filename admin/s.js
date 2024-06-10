@@ -15,7 +15,7 @@ keyword.addEventListener('keyup', function () {
     };
 
 
-    xhr.open('get', 'ajax/ajax_cari.php?keyword=' + keyword.value);
+    xhr.open('get', 'ajax_cari.php?keyword=' + keyword.value);
     xhr.send();
 
 });
