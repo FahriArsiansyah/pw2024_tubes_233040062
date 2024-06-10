@@ -79,6 +79,9 @@ nav {
               <a class="nav-link" href="login/login.php">Login</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="">Register</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="../login/logout.php">Logout</a>
             </li>
           </ul>
@@ -139,7 +142,7 @@ nav {
 
     <!-- Kategori End -->
 
-    <a class="btn btn-primary" href="https://maps.app.goo.gl/xqANmnHc8WeDm9SV7?g_st=iw" role="button">Our Location</a>
+              <a class="btn btn-primary" href="https://maps.app.goo.gl/xqANmnHc8WeDm9SV7?g_st=iw" role="button">Our Location</a>
 
         <!-- Footer -->
         <footer class="bg-light p-5 mt-5">

@@ -102,7 +102,7 @@ nav {
 
     <!-- Kategori -->
     <div class="container mt-5" id="kategori">
-    <a href="admin/tambah.php" class="btn btn-primary mb-5">Tambah data Obat</a>
+    <a href="tambah.php" class="btn btn-primary mb-5">Tambah data Obat</a>
   
         <div class="contonor">
             <?php if(empty($apotek)) : ?>
@@ -126,8 +126,8 @@ nav {
                             <p><?= $apt['produsen']; ?></p>
                             <p><?= $apt['tanggal_kadaluwarsa']; ?></p>
                             <p><?= $apt['harga']; ?></p>
-                            <a href="admin/ubah.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Ubah</a>
-                            <a href="admin/hapus.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Hapus</a>
+                            <a href="ubah.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Ubah</a>
+                            <a href="hapus.php?id=<?= $apt['id'] ?>" class="btn btn-primary">Hapus</a>
                         </div>
                     </div>
                 </div>
