@@ -79,9 +79,6 @@ nav {
               <a class="nav-link" href="login/login.php">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./login/register.php">Register</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="./login/logout.php">Logout</a>
             </li>
           </ul>
